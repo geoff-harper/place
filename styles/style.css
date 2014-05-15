@@ -1,0 +1,250 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* http://meyerweb.com/eric/tools/css/reset/
+	v2.0 | 20110126
+	License: none (public domain)
+*/
+	
+	html,body,div,span,applet,object,iframe,
+	h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+	a,abbr,acronym,address,big,cite,code,
+	del,dfn,em,img,ins,kbd,q,s,samp,
+	small,strike,strong,sub,sup,tt,var,
+	b,u,i,center,
+	dl,dt,dd,ol,ul,li,
+	fieldset,form,label,legend,
+	table,caption,tbody,tfoot,thead,tr,th,td,
+	article,aside,canvas,details,embed,
+	figure,figcaption,footer,header,hgroup,
+	menu,nav,output,ruby,section,summary,
+	time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+	
+	/* HTML5 display-role reset for older browsers */
+	article,aside,details,figcaption,figure,
+	footer,header,hgroup,menu,nav,section{display:block;}
+	body{line-height:1;}
+	ol,ul{list-style:none;}
+	blockquote,q{quotes:none;}
+	blockquote:before,blockquote:after,
+	q:before,q:after{content:'';content:none;}
+	table{border-collapse:collapse;border-spacing:0;}
+	
+	*, *:before, *:after {
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	
+	textarea, input, select { outline: none; }	/*Turn off browser outline default*/
+	
+/*************************
+		FONTS
+*************************/
+
+@font-face {		/*body font*/
+    font-family: 'clear_sansregular';
+    src: url(../fonts/ClearSans-Regular-webfont.eot);
+    src: url(../fonts/ClearSans-Regular-webfont.eot?#iefix) format('embedded-opentype'),
+         url(../fonts/ClearSans-Regular-webfont.woff) format('woff'),
+         url(../fonts/ClearSans-Regular-webfont.ttf) format('truetype'),
+         url(../fonts/ClearSans-Regular-webfont.svg#clear_sansregular) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {	/*logo font*/
+    font-family: 'ubuntumedium_italic';
+    src: url(../fonts/ubuntu-mi-webfont.eot);
+    src: url(../fonts/ubuntu-mi-webfont.eot) format('embedded-opentype'),
+         url(../fonts/ubuntu-mi-webfont.woff) format('woff'),
+         url(../fonts/ubuntu-mi-webfont.ttf) format('truetype'),
+         url(../fonts/ubuntu-mi-webfont.svg#ubuntumedium_italic) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*************************
+		HEADER
+*************************/
+
+#header {
+	height: 90px;
+	z-index: 1;
+	background: -webkit-linear-gradient(#fff 80%, #ECECEC); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#fff 80%, #ECECEC); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#fff 80%, #ECECEC); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#fff, #DBDBDB); /* Standard syntax */
+	position: relative;	
+}
+
+#header img {	/*Logo image*/
+	position: absolute;
+	bottom: 18px;
+	left: 8%;	
+}
+
+#signIn {	/*Login form*/
+	position: absolute;
+	right: 10%;
+	bottom: 30px;	
+}
+
+#signIn .textField1 {	/*Login form textfields*/
+	width: 170px;
+	height: 30px;
+	border: 1px #A0A0A0 solid;
+	padding-left: 8px;	
+	margin-right: 5px;
+	font-family: 'clear_sansregular', arial, helvetica, sans-serif;
+	font-size: 16px;
+}
+
+#signIn .button { padding: 3px 14px; height: 30px; }
+
+.button {	/*CSS for Login button as well as register button*/
+	background-color: #34495e;
+	color: white;
+	border: none;	
+	cursor: pointer;
+	margin: 0;
+	font-family: 'clear_sansregular', arial, helvetica, sans-serif;
+	font-size: 16px;	
+}
+
+/*************************
+		FORM	
+*************************/
+
+#slideshow {		/*Holds slideshow and covers screen*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -1;	
+}
+
+.signUp {	/*sign up form*/
+	z-index: 1;
+	width: 524px;
+	padding: 12px 20px 20px 20px;
+	background-color: rgba(255,255,255,0.9);
+	border-radius: 15px;
+	font-family: 'clear_sansregular', arial, helvetica, sans-serif;
+	font-size: 16px;
+	position: absolute;
+}
+
+#placeWelcome { top: 13.5%; left: 8%; }		/*postions welcome message*/
+#placeSignUp { top: 33.8%; left: 8%; }		/*positions registration*/
+
+.signUp p {	font-size: 18px; }
+#welcomeLogo { font-family: 'ubuntumedium_italic', arial, helvetica, sans-serif; color: #000; }	/*logo in welcome box*/
+#welcomeMessage { margin-bottom: 7px !important; }
+
+.signUp h1 {
+	font-size: 32px;
+	margin-bottom: 18px;
+	color: #34495e;
+}
+
+.textField2 {	/*textfields that require information entering manually*/
+	width: 200px;
+	height: 30px;
+	color: #969696;
+	border: none;
+	padding-left: 4px;
+}
+
+.textField3 {	/*dropdown browser default */
+	width: 248px;
+	padding: 5px 0;
+	height: 30px;
+	color: #969696;
+	border: none;
+	background: transparent;
+	-webkit-appearance: none; 
+}
+
+/* In order to get a custom dropdown arrow, I had to put this transparent div over top with the actual width I wanted and then made the arrow a background image. The actual dropdown is 18px(width of default arrow) longer and is cut off at the proper width*/
+.styledSelect {		
+	width: 232px;
+	height: 30px;
+	overflow: hidden;
+	background: no-repeat 210px #fff;
+	background-image: url(../images/arrow.png);
+	border: 1px #A0A0A0 solid;
+}
+
+.tickBox {	/*radio buttons and checkbox*/
+	float: left;
+	margin: 10px 0;	
+}
+
+.tickBox a {	/*mumbo jumbo*/
+	color: #969696;
+	text-decoration: none;
+}
+
+.infoBox {	/*h2 as well as text field pairing*/
+	float: left;
+	margin-bottom: 10px;
+}
+
+.infoBox:nth-of-type(odd) { margin-right: 20px; }
+#optional { font-size: 12px; color:#969696; font-style:italic; }
+.radioAnswer { color: #626262; }
+
+.signUp .button {	/*registration button*/
+	width: 482px;
+	height: 50px;
+	margin-top: 10px;
+}
+
+.errorMessage {	/*error popup*/
+	margin-top: 3px;
+	font-size: 12px !important;
+	color: #ce2423;
+	font-style: italic;
+	display: none;	
+}
+
+.validation {	/* X/checkmark png */
+	height: 30px;
+	background-color: #fff;
+	float: right;
+	display: inline;
+	padding: 5px;
+}
+
+.imgPairing { border: 1px #A0A0A0 solid; }  /*textfield and png pair*/
+
+
+/*************************
+		CLEARFIX
+*************************/
+
+.clearfix:after {
+	content: " ";
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;	
+}
+
+/*************************
+		QUERIES
+*************************/
+
+@media screen and (min-height: 1100px) {	/*adjusting positioning on bigger screens*/
+	
+	#header { height: 110px; }
+	#header img { bottom: 28px;}	
+	#signIn { bottom: 40px;	}
+	
+	#placeWelcome { top: 12.5%; }
+	#placeSignUp { top: 25%; }
+}

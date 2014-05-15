@@ -1,0 +1,129 @@
+<!doctype html>
+
+<html lang="en-ca">
+    <head>
+    	<title>pLace</title>
+        <meta charset="utf-8">
+        <meta name="description" content="pLace">
+        <link type="text/css" rel="stylesheet" href="styles/style.css"> 
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+        <script src="scripts/statesProvinces.js"></script>	<!--List of states and provinces-->
+        <script src="scripts/trim.js"></script>	<!--Trims text fields-->
+        <script src="scripts/script.js"></script>       
+    </head>
+    
+    <body>
+    
+    	<div id="header">
+            <img src="images/logo.png" alt="pLace">	<!--Logo in header-->
+            
+            <div id="signIn">
+                
+                <form name="loginInfo" id="loginInfo" method="get">		<!--Login Form-->
+                	<input type="text" class="textField1" name="username" placeholder="Username"/>
+                	<input type="text" class="textField1" name="password" placeholder="Password"/>
+                    <input type="submit" class="button" name="loginBtn" value="Login"/>
+                </form>
+            </div>
+        </div>
+        
+        <div id="slideshow"></div>	<!--Holds slideshow-->
+        <div class="signUp" id="placeWelcome">	<!--Welcome message/description-->
+        	<h1 id="welcomeMessage" class="clearfix">Welcome to <span id="welcomeLogo">pLace</span>.</h1>
+            <p>Sign up with us to get all the hottest travel deals around. We have the inside scoop on the newest accomodations and flights. There's a huge range of selection at competitive prices, just leave us your info and drop in!</p>
+        </div>
+        
+        <div class="signUp" id="placeSignUp">	<!--Registration form-->
+        	<h1>Register Now</h1>
+            
+            <form name="signUpForm" id="signUpForm" method="get" action="pLace.php">
+                <div class="infoBox"> <!--Full name-->
+                    <h2>Full Name</h2>
+                    <div class="imgPairing"><input type="text" id="fullName" class="textField2" name="fullName" /><img src="images/placehold.png" class="validation" alt="validation"></div>	<!--textfield plus X/checkmark-->
+                    <p class="errorMessage">Enter your name</p>	<!--Error message-->
+                </div>
+                
+                <div class="infoBox">  <!--email-->
+                    <h2>Email</h2>
+                    <div class="imgPairing"><input type="text" id="email" class="textField2" name="email" /><img src="images/placehold.png" class="validation" alt="validation"></div><!--textfield plus X/checkmark-->
+                    <p class="errorMessage">Enter your email</p><!--Error message-->
+                </div>
+                
+                <div class="infoBox">  <!--street address 1-->
+                    <h2>Street Address 1</h2>
+                    <div class="imgPairing"><input type="text" id="street1" class="textField2" name="street1" /><img src="images/placehold.png" class="validation" alt="validation"></div><!--textfield plus X/checkmark-->
+                    <p class="errorMessage">Enter your address</p><!--Error message-->
+                </div>
+                
+                <div class="infoBox">  <!--street address 2-->
+                    <h2>Street Address 2 <span id="optional">*optional</span></h2>
+                    <div class="imgPairing"><input type="text" id="street2" class="textField2" name="street2" /><img src="images/placehold.png" class="validation" alt="validation"></div><!--textfield plus X/checkmark-->
+                </div>
+                
+                <div class="infoBox">  <!--city-->
+                    <h2>City</h2>
+                    <div class="imgPairing"><input type="text" id="city" class="textField2" name="city" /><img src="images/placehold.png" class="validation" alt="validation"></div><!--textfield plus X/checkmark-->
+                    <p class="errorMessage">Enter your city</p><!--Error message-->
+                </div>
+                
+                <div class="infoBox">  <!--postal/zip-->
+                    <h2>Postal/Zip</h2>
+                    <div class="imgPairing"><input type="text" id="postalZip" class="textField2" name="postalZip" /><img src="images/placehold.png" class="validation" alt="validation"></div><!--textfield plus X/checkmark-->
+                    <p class="errorMessage" id="regionalCode">Enter your postal code</p><!--Error message-->
+                </div>
+                
+                <div class="infoBox">  <!--country-->
+                    <h2>Country</h2>
+                    <div class="styledSelect">
+                        <select id="country" name="country" class="textField3">
+                            <option value="X" id="pick">Pick a country...</option> <!--Country options-->
+                            <option value="AU">Australia</option>
+                            <option value="CA">Canada</option>
+                            <option value="US">United States</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="infoBox">  <!--state/province-->
+                    <h2>State/Province</h2>
+                    <div class="styledSelect">
+                        <select id="stateProvince" name="stateProvince" class="textField3">
+                            <option value="X" >Pick a country...</option>  	<!--State/Province options-->
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="tickBox">	<!--radio buttons to establish intentions-->
+                	<h2>Do you wish to travel internationally?</h2>
+                    <input type="radio" name="abroad" value="yes" checked/><span class="radioAnswer">Yes</span>
+                    <input type="radio" name="abroad" value="no" /><span class="radioAnswer">No</span>
+                </div>
+                
+                <div class="tickBox">	<!--legal mumbo jumbo-->
+                	<input type="checkbox" name="legal">I've read through all the legal <a href="#">mumbo jumbo.</a>
+                </div>
+                
+                <input type="submit" class="button" name="signUpBtn" id="signUpBtn" value="Start Saving!" />	<!--register button-->
+            </form>
+        </div>
+        
+        
+        <!-- SLIDESHOW JQUERY -->
+        <script src="scripts/jquery.js"></script>
+		<script src="scripts/jquery.backstretch.js"></script>
+		<script>
+   		
+  		 $("#slideshow").backstretch([
+     		 "images/background1.jpg",	<!--Bridge-->
+     		 "images/background2.jpg",	<!--Forest road-->
+     		 "images/background3.jpg",	<!--Chairlift-->
+			 "images/background4.jpg"    <!--Big Ben-->
+  		 ], {
+     		 fade: 750,
+     		 duration: 6000
+   		});
+		</script>
+        
+	</body>
+</html>
